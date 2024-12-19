@@ -1,14 +1,21 @@
 package model;
 
 public abstract class Conta {
-    double saldo;
+    protected double saldo;
 
+    public double getSaldo() {
+        return saldo;
+    }
 
-    void deposita(double valor) {
+     public Conta(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public void deposita(double valor) {
         this.saldo += valor;
     }
-    void saca(double valor) {
+    public void saca(double valor) {
         this.saldo -= valor;
     }
-    abstract void atualiza(double valor);
+    abstract public void atualiza(double valor);
 }
